@@ -598,7 +598,8 @@
         var originalCompareStr = compareStr;
         compareStr = sinon.spy(compareStr);
         compareStr('house', 'houses');
-        expect(compareStr.callCount).to.be.above(1);
+        compareStr('house', 'house');
+        expect(compareStr.callCount).to.be.above(2);
         compareStr = originalCompareStr;
       });
 
